@@ -41,9 +41,9 @@ dist_tbl <- flights |>
 dist_tbl
 ```
 
-
 # Question 3
-Finding out which carriers have a standard deviation with 0 or NA. 
+
+Finding out which carriers have a standard deviation with 0 or NA.
 
 ```{r}
 # Show carriers where sd_distance is NA
@@ -54,9 +54,7 @@ dist_tbl |> filter(sd_distance == 0)
 
 ```
 
-If the standard deviation is NA, this happens when a carrier has only one flight in January. The standard deviation requires at least two data points to be computed.
-if the standard deviation is 0, this happens when all flights for that carrier have the same distance, leading to zero variation.
-
+If the standard deviation is NA, this happens when a carrier has only one flight in January. The standard deviation requires at least two data points to be computed. if the standard deviation is 0, this happens when all flights for that carrier have the same distance, leading to zero variation.
 
 # Question 4
 
@@ -69,8 +67,8 @@ dep_delay_df <- flights |>
 dep_delay_df
 ```
 
-
 # Question 5
+
 ```{r}
 # Calculate the proportion of flights that departed late but arrived on or before time
 delayed_but_on_time <- flights |>
@@ -83,9 +81,10 @@ delayed_but_on_time <- flights |>
 delayed_but_on_time$proportion
 ```
 
-
 # Question 6
+
 Identifying the routes that more than one airline flies.
+
 ```{r}
 multi_airline_routes <- flights |>
   group_by(origin, dest) |>
@@ -96,6 +95,7 @@ multi_airline_routes
 ```
 
 Calculate the average arrival delay for each airline
+
 ```{r}
 route_delays <- flights |>
   inner_join(multi_airline_routes, by = c("origin", "dest")) |>
@@ -107,6 +107,7 @@ route_delays
 ```
 
 Finding the names of these airlines
+
 ```{r}
 route_delays_with_names <- route_delays |>
   inner_join(airlines, by = "carrier") |>
@@ -134,7 +135,6 @@ route_performance <- route_delays |>
 
 route_performance
 ```
-
 
 Identify the route with the greatest difference between best and worst performing airlines
 
@@ -165,8 +165,7 @@ reason_for_difference <- flights |>
 reason_for_difference
 ```
 
-The main reason for this is due to the extreme differences in flight frequency. Airlines with fewer flights may have skewed delayed statistics due to extreme cases. 
-
+The main reason for this is due to the extreme differences in flight frequency. Airlines with fewer flights may have skewed delayed statistics due to extreme cases.
 
 # Question 7
 
@@ -272,8 +271,8 @@ NA, 77, 80, 115, 85, 88, 109, NA, 71, 90, 94, 91, 87, 113, 93,
 
 ```
 
-
 Identifying missing values and typos.
+
 ```{r}
 # Function to check for missing values
 missing_values <- colSums(is.na(dataset1))
@@ -304,4 +303,3 @@ list(
   exercise_typos = exercise_typos
 )
 ```
-
