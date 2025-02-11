@@ -1,5 +1,30 @@
 project:
-  title: "Submission 1 peer"
+  type: website
+  output-dir: _site 
+  render:
+  - index.qmd
+  - Stats proj 1.qmd
+  - Prac 2.qmd
+  - Prac day 4.qmd
 
-editor: visual
+book:
+  title: Statistical Computing
+  sidebar:
+    border: true
+    background: light
+    position: right
+  navbar:
+    search: true
+    background: light
+  chapters:
+  - index.qmd
+  - Stats proj 1.qmd
+  - Prac 2.qmd
+  - Prac day 4.qmd
 
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: left

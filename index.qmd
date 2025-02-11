@@ -1,0 +1,8 @@
+---
+title: "Statistical Computing"
+format: html
+---
+
+# Welcome to Statistical Computing
+
+This is the homepage of the book.
